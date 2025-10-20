@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Galería — Sesiones</title>
+  <link rel="stylesheet" href="/galeria_img_css/galeria-sesiones.css">
+</head>
+<body>
+  <header class="site-header">
+  <div class="header-inner">
+    <a href="/index.html" class="header-logo">
+      <img src="/logoHernan.png" alt="Logo Hernan Rubio" />
+      <span>HernanRubio</span>
+    </a>
+  </div>
+</header>
+
+  <!-- SESIONES EN INTERIOR -->
+  <section class="section">
+    <h2 class="section-title">Sesiones en Interior</h2>
+    <div class="center-btn">
+      <a href="/index.html" class="btn">← Volver</a>
+    </div>
+    <div class="grid">
+      <figure class="grid-item"><img src="/img/sesion interior/ESTUDIO-2.jpg" alt="Sesión Interior 1"></figure>
+      <figure class="grid-item"><img src="/img/sesion interior/ESTUDIO-46.jpg" alt="Sesión Interior 2"></figure>
+      <figure class="grid-item"><img src="/img/sesion interior/ESTUDIO-58.jpg" alt="Sesión Interior 3"></figure>
+    </div>
+  </section>
+
+  <!-- SESIONES EN EXTERIOR -->
+  <section class="section">
+    <h2 class="section-title">Sesiones en Exterior</h2>
+    <div class="grid">
+      <figure class="grid-item"><img src="/img/sesion exterior/ENTRENAMIENTO-1.jpg" alt="Sesión Exterior 1"></figure>
+      <figure class="grid-item"><img src="/img/sesion exterior/ENTRENAMIENTO-4.jpg" alt="Sesión Exterior 2"></figure>
+      <figure class="grid-item"><img src="/img/sesion exterior/ENTRENAMIENTO-8.jpg" alt="Sesión Exterior 3"></figure>
+      <figure class="grid-item"><img src="/img/sesion exterior/ENTRENAMIENTO-9.jpg" alt="Sesión Exterior 4"></figure>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="close-btn">&times;</span>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="imagen ampliada">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".close-btn");
+
+    document.querySelectorAll(".grid-item img").forEach(img => {
+      img.addEventListener("click", () => {
+        lightbox.classList.add("show");
+        lightboxImg.src = img.src;
+      });
+    });
+
+    closeBtn.addEventListener("click", () => {
+      lightbox.classList.remove("show");
+      lightboxImg.src = "";
+    });
+
+    lightbox.addEventListener("click", e => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove("show");
+        lightboxImg.src = "";
+      }
+    });
+  </script>
+</body>
+</html>

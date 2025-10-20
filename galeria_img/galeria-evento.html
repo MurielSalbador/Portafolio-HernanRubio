@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Galería — Eventos</title>
+  <link rel="stylesheet" href="/galeria_img_css/galeria-evento.css">
+</head>
+<body>
+ <header class="site-header">
+  <div class="header-inner">
+    <a href="/index.html" class="header-logo">
+      <img src="/logoHernan.png" alt="Logo Hernan Rubio" />
+      <span>HernanRubio</span>
+    </a>
+  </div>
+</header>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Galería de Eventos</h2>
+      <div class="center-btn">
+        <a href="/index.html" class="btn">← Volver</a>
+      </div>
+
+      <div class="grid">
+        <figure class="grid-item"><img src="/img/evento club/SOHO-114.jpg" alt=""></figure>
+        <figure class="grid-item"><img src="/img/evento club/SOHO-139.jpg" alt=""></figure>
+        <figure class="grid-item"><img src="/img/evento club/SOHO-9.jpg" alt=""></figure>
+        <figure class="grid-item"><img src="/img/evento club/SOHO5-6-114.jpg" alt=""></figure>
+        <figure class="grid-item"><img src="/img/evento club/SOHO5-6-13.jpg" alt=""></figure>
+        <figure class="grid-item"><img src="/img/evento club/SOHO5-6-221.jpg" alt=""></figure>
+        <figure class="grid-item"><img src="/img/evento club/SOHO5-6-73.jpg" alt=""></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="close-btn">&times;</span>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="imagen ampliada">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".close-btn");
+
+    document.querySelectorAll(".grid-item img").forEach(img => {
+      img.addEventListener("click", () => {
+        lightbox.classList.add("show");
+        lightboxImg.src = img.src;
+      });
+    });
+
+    closeBtn.addEventListener("click", () => {
+      lightbox.classList.remove("show");
+      lightboxImg.src = "";
+    });
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove("show");
+        lightboxImg.src = "";
+      }
+    });
+  </script>
+</body>
+</html>

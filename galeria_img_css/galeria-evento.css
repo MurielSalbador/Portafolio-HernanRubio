@@ -1,0 +1,219 @@
+/* === RESET === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* === CONTENEDOR === */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* === HEADER === */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 68px;
+}
+
+/* === LOGO === */
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #111;
+  transition: 0.3s ease;
+  font-family: "Playfair Display", serif;
+}
+
+.header-logo img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+.header-logo span {
+  font-size: 20px;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.header-logo:hover span {
+  color: #c49a6c;
+  transform: scale(1.05);
+}
+
+/* === SECCIÓN GALERÍA === */
+.section {
+  padding: 120px 0 80px;
+}
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 38px;
+  text-align: center;
+  color: #111;
+  margin-bottom: 28px;
+}
+
+/* === BOTÓN VOLVER CENTRADO === */
+.center-btn {
+  text-align: center;
+  margin-bottom: 40px;
+}
+ .btn {
+      background: #f1e6d4;
+      color: #111;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+    .btn:hover {
+      background: #c49a6c;
+      color: #fff;
+    }
+
+/* === GRID DE IMÁGENES === */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+}
+.grid-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease;
+}
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+.grid-item:hover img {
+  transform: scale(1.08);
+  filter: brightness(0.9);
+}
+
+/* === LIGHTBOX === */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 100;
+}
+.lightbox.show {
+  visibility: visible;
+  opacity: 1;
+}
+.lightbox-img {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+.close-btn {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.close-btn:hover {
+  color: #c49a6c;
+}
+
+/* === EFECTO APARICIÓN === */
+.grid-item {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeIn 0.6s forwards;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 28px;
+  }
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .header-inner {
+    justify-content: flex-start;
+    padding-left: 20px;
+  }
+
+  .header-logo {
+    gap: 8px;
+  }
+
+  .header-logo img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .header-logo span {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-inner {
+    justify-content: center;
+  }
+
+  .header-logo {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .header-logo span {
+    font-size: 16px;
+  }
+}

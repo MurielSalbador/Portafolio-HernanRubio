@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Galería — Deportes</title>
+  <link rel="stylesheet" href="/galeria_img_css/galeria-deportes.css">
+</head>
+<body>
+    <header class="site-header">
+  <div class="header-inner">
+    <a href="/index.html" class="header-logo">
+      <img src="/logoHernan.png" alt="Logo Hernan Rubio" />
+      <span>HernanRubio</span>
+    </a>
+  </div>
+</header>
+
+  <!-- FUTBOL -->
+  <section class="section">
+    <h2 class="section-title">Fútbol</h2>
+    <div class="center-btn">
+      <a href="/index.html" class="btn">← Volver</a>
+    </div>
+    <div class="grid">
+      <figure class="grid-item"><img src="/img/futbol/DSC_5032.JPG" alt="Fútbol 1"></figure>
+      <figure class="grid-item"><img src="/img/futbol/PIÑERO-125.jpg" alt="Fútbol 2"></figure>
+      <figure class="grid-item"><img src="/img/futbol/PIÑERO-159.jpg" alt="Fútbol 3"></figure>
+      <figure class="grid-item"><img src="/img/futbol/PIÑERO-92.jpg" alt="Fútbol 4"></figure>
+      <figure class="grid-item"><img src="/img/futbol/ZURICH-125.jpg" alt="Fútbol 5"></figure>
+      <figure class="grid-item"><img src="/img/futbol/ZURICH-183.jpg" alt="Fútbol 6"></figure>
+    <figure class="grid-item"><img src="/img/futbol/ZURICH-30.jpg" alt="Fútbol 7"></figure>
+    <figure class="grid-item"><img src="/img/futbol/ZURICH6-9-166.jpg" alt="Fútbol 8"></figure>
+    <figure class="grid-item"><img src="/img/futbol/ZURICH6-9-370.jpg" alt="Fútbol 9"></figure>
+    </div>
+  </section>
+
+  <!-- NATACIÓN -->
+  <section class="section">
+    <h2 class="section-title">Natación</h2>
+    <div class="grid">
+      <figure class="grid-item"><img src="/img/natacion/WhatsApp Image 2025-08-21 at 23.06.36.jpeg" alt="Natación 1"></figure>
+    </div>
+  </section>
+
+  <!-- RUGBY -->
+  <section class="section">
+    <h2 class="section-title">Rugby</h2>
+    <div class="grid">
+      <figure class="grid-item"><img src="/img/rugby/DRC-TALA-25.jpg" alt="Rugby 1"></figure>
+      <figure class="grid-item"><img src="/img/rugby/DRC-TALA-28.jpg" alt="Rugby 2"></figure>
+      <figure class="grid-item"><img src="/img/rugby/DRC-TALA-36.jpg" alt="Rugby 3"></figure>
+      <figure class="grid-item"><img src="/img/rugby/DRC-TALA-41.jpg" alt="Rugby 4"></figure>
+      <figure class="grid-item"><img src="/img/rugby/DRC-TALA-48.jpg" alt="Rugby 5"></figure>
+      <figure class="grid-item"><img src="/img/rugby/DRC-TALA-50.jpg" alt="Rugby 6"></figure>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="close-btn">&times;</span>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="imagen ampliada">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".close-btn");
+
+    document.querySelectorAll(".grid-item img").forEach(img => {
+      img.addEventListener("click", () => {
+        lightbox.classList.add("show");
+        lightboxImg.src = img.src;
+      });
+    });
+
+    closeBtn.addEventListener("click", () => {
+      lightbox.classList.remove("show");
+      lightboxImg.src = "";
+    });
+
+    lightbox.addEventListener("click", e => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove("show");
+        lightboxImg.src = "";
+      }
+    });
+  </script>
+</body>
+</html>

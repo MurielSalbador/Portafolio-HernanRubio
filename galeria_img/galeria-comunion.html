@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Galería — Comunión</title>
+  <link rel="stylesheet" href="/galeria_img_css/galeria-comunion.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/index.html" class="header-logo">
+      <img src="/logoHernan.png" alt="Logo Hernan Rubio" />
+      <span>HernanRubio</span>
+    </a>
+  </div>
+</header>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Galería de Comuniones</h2>
+      <div class="center-btn">
+        <a href="/index.html" class="btn">← Volver</a>
+      </div>
+
+      <div class="grid">
+        <figure class="grid-item"><img src="/img/comunion/1COPIA15X10-17.jpg" alt=""></figure>
+        <figure class="grid-item"><img src="/img/comunion/1COPIA15X10-18.jpg" alt=""></figure>
+        <figure class="grid-item"><img src="/img/comunion/1COPIA15X10-22.jpg" alt=""></figure>
+        <figure class="grid-item"><img src="/img/comunion/1COPIA15X10-23.jpg" alt=""></figure>
+        <figure class="grid-item"><img src="/img/comunion/1COPIA20X25-1.jpg" alt=""></figure>
+        <figure class="grid-item"><img src="/img/comunion/2COPIA15X10-5.jpg" alt=""></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="close-btn">&times;</span>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="imagen ampliada">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".close-btn");
+
+    document.querySelectorAll(".grid-item img").forEach(img => {
+      img.addEventListener("click", () => {
+        lightbox.classList.add("show");
+        lightboxImg.src = img.src;
+      });
+    });
+
+    closeBtn.addEventListener("click", () => {
+      lightbox.classList.remove("show");
+      lightboxImg.src = "";
+    });
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove("show");
+        lightboxImg.src = "";
+      }
+    });
+  </script>
+</body>
+</html>
