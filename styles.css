@@ -288,6 +288,35 @@ html,body { height: 100%; font-family: "Montserrat", system-ui, -apple-system, "
   padding: 12px;
 }
 
+/* === BOTÓN FLOTANTE DE WHATSAPP === */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 25px;
+  right: 25px;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.whatsapp-float img {
+  width: 32px;
+  height: 32px;
+  filter: brightness(0) invert(1);
+}
+
+
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
